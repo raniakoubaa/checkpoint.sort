@@ -1,0 +1,24 @@
+PROCEDURE permut(v1,v2:INTEGER)
+VAR
+    p: INTEGER
+BEGIN
+    p:=v1
+    v1:=v2
+    v2:=p
+END
+
+ALGORITHM Sort
+VAR
+    i,j: INTEGER
+    arr: ARRAY_OF INTEGER[50]
+BEGIN
+REPEAT
+ j:=0
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO
+        IF (arr[i-1]>arr[i]) THEN
+            permut(arr[i],arra[i-1])
+            j++
+        END_IF
+    END_FOR
+UNTIL (j>0)
+END
